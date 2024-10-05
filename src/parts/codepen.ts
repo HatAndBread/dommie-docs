@@ -3,6 +3,7 @@ interface CodePenOptions {
   title: string;
   hash: string;
   height?: number | string;
+  params?: string;
 }
 export default (__: Template, options: CodePenOptions) => {
   __.component(({ afterMounted, state }) => {
@@ -15,7 +16,7 @@ export default (__: Template, options: CodePenOptions) => {
       "data-theme-id": "light",
       "data-height": options.height || 400,
       "data-default-tab": "js",
-      "data-slug-hash": options.hash,
+      "data-slug-hash": options.hash + (options.params || ""),
       "data-pen-title": options.title,
       "data-editable": "true",
       "data-user": "HatAndBread",

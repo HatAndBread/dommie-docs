@@ -11,7 +11,7 @@ export default (__: Template) => {
           __.p(() => {
             __.text(`
               In this section, we’ll explore how to manage state in Dommie by building an interactive counter app.
-              You'll learn how to initialize a stateful variable, update it reactively, and—importantly—ensure that changes to the state automatically update the UI using the
+              You'll learn how to initialize a stateful variable, update it reactively, and—importantly—ensure that changes to the state update the UI using the
               `);
             __.code({ text: "subscribe" });
             __.text(` option.`);
@@ -73,7 +73,7 @@ export default (__: Template) => {
                 __.code({ text: "subscribe" });
                 __.strong({
                   text: `is the key to reactivity in Dommie.
-                  It allows Dommie to update only the elements that are subscribed to the state, rather than re-rendering the entire component as some other libraries (⚛️🤫) do.
+                  It allows Dommie to update only the elements that are subscribed to the state, rather than re-rendering the entire component.
                   `,
                 });
               });

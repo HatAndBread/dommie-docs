@@ -9,9 +9,15 @@ import createAnApplication from "./pages/tutorial/create-an-application";
 import templating from "./pages/tutorial/templating";
 import loops from "./pages/tutorial/loops";
 import reuseableComponents from "./pages/tutorial/reuseable-components";
+import componentParams from "./pages/tutorial/component-params";
 import state from "./pages/tutorial/state";
 import multipleSubscriptions from "./pages/tutorial/multiple-subscriptions";
 import sideEffects from "./pages/tutorial/side-effects";
+import events from "./pages/tutorial/events";
+import refs from "./pages/tutorial/refs";
+import afterMounted from "./pages/tutorial/after-mounted";
+import apiCalls from "./pages/tutorial/api-calls";
+import afterDestroyed from "./pages/tutorial/after-destroyed";
 import notFound from "./pages/not-found";
 
 const routes = {
@@ -21,9 +27,15 @@ const routes = {
   "/tutorial/templating": templating,
   "/tutorial/reusable-components": reuseableComponents,
   "/tutorial/loops": loops,
+  "/tutorial/component-params": componentParams,
   "/tutorial/state": state,
   "/tutorial/multiple-subscriptions": multipleSubscriptions,
   "/tutorial/side-effects": sideEffects,
+  "/tutorial/events": events,
+  "/tutorial/refs": refs,
+  "/tutorial/after-mounted": afterMounted,
+  "/tutorial/api-calls": apiCalls,
+  "/tutorial/after-destroyed": afterDestroyed,
 };
 
 const main = (__: Template) => {

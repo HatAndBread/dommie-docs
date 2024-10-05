@@ -16,13 +16,20 @@ const tutorialRoutes = {
   "/tutorial/templating": "Templating",
   "/tutorial/reusable-components": "Reusable Components",
   "/tutorial/loops": "Loops",
+  "/tutorial/component-params": "Component Parameters",
   "/tutorial/state": "State Management",
   "/tutorial/multiple-subscriptions": "Multiple Subscriptions",
   "/tutorial/side-effects": "Side Effects",
+  "/tutorial/events": "Events",
+  "/tutorial/refs": "Refs",
+  "/tutorial/after-mounted": "afterMounted",
+  "/tutorial/api-calls": "API Calls",
+  "/tutorial/after-destroyed": "afterDestroyed",
 };
 const sectionBreaks = {
   "/tutorial": "Getting Started",
-  "/tutorial/state": "State Management",
+  "/tutorial/component-params": "State Management",
+  "/tutorial/refs": "Refs and Life Cycle",
 };
 export default (__: Template, options: Options) => {
   return __.component(({ r, afterMounted }) => {

@@ -14,10 +14,9 @@ export default (__: Template) => {
           __.p(() => {
             __.text("The ");
             __.code({ text: `subscribe` });
-            __.text(" function, given as a parameter to ");
-            __.code({ text: "component" });
+            __.text(` method of "component params"`);
             __.text(
-              ", allows you to trigger side effects when state changes. Here's how it's used: ",
+              " allows you to trigger side effects when state changes. Here's how it's used: ",
             );
             __.pre({ class: "mt-4" }, () => {
               __.code({
