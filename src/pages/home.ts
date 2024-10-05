@@ -5,7 +5,9 @@ import code from "../parts/code";
 export default (__: Template) => {
   return __.component(({ r }) => {
     __.div(
-      { class: "hero bg-base-100 h-[calc(100vh-64px)] text-secondary" },
+      {
+        class: "hero bg-base-100 h-fit min-h-[calc(100vh-64px)] text-secondary",
+      },
       () => {
         __.div({ class: "hero-content flex-col lg:flex-row gap-8" }, () => {
           __.div(
@@ -169,12 +171,12 @@ export default (__: Template) => {
                 __.a(
                   {
                     href: example.codeUrl,
-                    class: "",
                     target: "_blank",
                   },
                   () => {
                     __.img({
                       src: "/github-mark.svg",
+                      style: { maxWidth: "20px" },
                       height: 20,
                       width: 20,
                       alt: "code",
