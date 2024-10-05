@@ -278,13 +278,13 @@ __.h1({
   style: { fontSize: "2rem", fontWeight: "bold" },
   text: () => \`Count: \${count.value}\`,
   subscribe: count,
-});
+})
 __.button({
   text: "+",
   click: () => count.update(count.value + 1),
-});
+})
 __.button({
   text: "-",
   click: () => count.update(count.value - 1),
-});
+})
 `;
