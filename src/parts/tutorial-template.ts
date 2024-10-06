@@ -33,10 +33,13 @@ const sectionBreaks = {
   "/tutorial/refs": "Refs and Life Cycle",
 };
 export default (__: Template, options: Options) => {
-  return __.component(({ r, afterMounted }) => {
+  return __.component(({ r, afterMounted, subscribe }) => {
     afterMounted(() => {
       hljs.highlightAll();
     });
+    subscribe(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    }, [r.path]);
     __.div(
       { class: "w-screen md:h-[calc(100vh-64px)] flex flex-col md:flex-row" },
       () => {
