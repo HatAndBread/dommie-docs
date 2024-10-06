@@ -78,11 +78,11 @@ export default (__: Template) => {
           __.div(() => {
             __.h1({
               class: "text-5xl font-bold",
-              text: "Dommie – An unambitious JavaScript UI library for the rest of us 🌈",
+              text: "Dommie – An Unambitious JavaScript UI Library 🌈",
             });
             __.p({
               class: "py-6",
-              text: "Dommie keeps it simple with pure JavaScript templating—no special syntax, just the JavaScript you know. With built-in reactivity and no need for complex build tools, you can start building dynamic interfaces right away, hassle-free.",
+              text: "Dommie is a modest JavaScript UI library that doesn't care about the rest of your tech stack. Just drop it into any application and start building.",
             });
             __.div({ class: "flex gap-4" }, () => {
               __.button(

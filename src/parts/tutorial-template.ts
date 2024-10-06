@@ -34,11 +34,10 @@ const sectionBreaks = {
 export default (__: Template, options: Options) => {
   return __.component(({ r, afterMounted }) => {
     afterMounted(() => {
-      console.log("I was mounted");
       hljs.highlightAll();
     });
     __.div(
-      { class: "w-screen h-[calc(100vh-64px)] flex flex-col md:flex-row" },
+      { class: "w-screen md:h-[calc(100vh-64px)] flex flex-col md:flex-row" },
       () => {
         __.div({ class: "md:w-1/2 h-full bg-base-100 relative" }, () => {
           __.div({ class: "drawer" }, () => {
@@ -91,7 +90,7 @@ export default (__: Template, options: Options) => {
           __.div(
             {
               class:
-                "flex flex-col gap-4 p-8 font-medium max-h-[calc(100vh-128px)] overflow-auto",
+                "flex flex-col gap-4 p-8 font-medium md:max-h-[calc(100vh-128px)] overflow-auto",
             },
             () => {
               __.h1({ class: "text-2xl font-bold", text: options.title });
@@ -102,7 +101,7 @@ export default (__: Template, options: Options) => {
             {
               subscribe: r.path,
               class:
-                "absolute bottom-0 w-full flex justify-center items-center bg-base-200 h-[64px]",
+                "md:absolute bottom-0 w-full flex justify-center items-center bg-base-200 h-[64px]",
             },
             () => {
               const routes = Object.keys(tutorialRoutes);
@@ -137,9 +136,12 @@ export default (__: Template, options: Options) => {
             },
           );
         });
-        __.div({ class: "h-full bg-base-200 flex md:w-1/2" }, () => {
-          options.codepen();
-        });
+        __.div(
+          { class: "h-screen md:h-full bg-base-200 flex md:w-1/2" },
+          () => {
+            options.codepen();
+          },
+        );
       },
     );
   });
