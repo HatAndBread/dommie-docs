@@ -120,7 +120,7 @@ export default (__: Template) => {
     __.div({ class: "flex justify-center" }, () => {
       __.div(
         {
-          class: "flex flex-col justify-center gap-4 max-w-[900px] w-[90%]",
+          class: "flex flex-col justify-center gap-8 max-w-[900px] w-[90%]",
         },
         () => {
           __.h2({
@@ -149,7 +149,7 @@ export default (__: Template) => {
             ⚡ Not every app needs a UI framework.
             `,
             });
-            __.p({ class: "mt-4" }, () => {
+            __.p(() => {
               __.text(`
                 Traditional server-side frameworks like Rails, Django, and Laravel are great!--and Dommie fits in with them seamlessly.
                 Just sprinkle some Dommie on top when you want to a little reactivity in your JavaScript. No need to structure your app around your frontend.
@@ -158,12 +158,12 @@ export default (__: Template) => {
           });
           __.p({ class: "" }, () => {
             __.strong({ text: "⚡ Single Page Applications" });
-          });
-          __.p(() => {
-            __.strong({ text: "SPAs" });
-            __.text(
-              " have their place too, and Dommie has that covered with built-in client-side routing.",
-            );
+            __.p(() => {
+              __.strong({ text: "SPAs" });
+              __.text(
+                " have their place too, and Dommie has that covered with built-in client-side routing.",
+              );
+            });
           });
         },
       );
