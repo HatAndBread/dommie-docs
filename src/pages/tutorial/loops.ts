@@ -24,8 +24,7 @@ export default (__: Template) => {
             __.text(
               ` element is assigned a unique ID.
               While the ID doesn't serve a specific purpose in this stateless example, it's a good habit to get into.
-              As you'll see later, Dommie relies on these unique IDs to keep track of DOM elements when a component's state changes.
-              If you are familiar with React or Vue, this serves the same purpose as a key prop.`,
+              Dommie relies on these unique IDs to keep track of DOM elements when a component's state changes.`,
             );
           });
         });

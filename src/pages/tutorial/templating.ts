@@ -1,6 +1,7 @@
 import type { Template } from "dommie";
 import tutorialTemplate from "../../parts/tutorial-template";
 import codepen from "../../parts/codepen";
+import code from "../../parts/code";
 
 export default (__: Template) => {
   return __.component(() => {
@@ -50,6 +51,9 @@ export default (__: Template) => {
             );
           });
           __.p(() => {
+            code(__, `__.div() // <div></div>`);
+          });
+          __.p(() => {
             __.code({ text: `__.div()` });
             __.text(
               `
@@ -62,19 +66,41 @@ export default (__: Template) => {
             __.text(".");
           });
         });
-        __.pre(() =>
-          __.code({ text: `__.div({class: "my-class", id: "my-id"})` }),
+        code(
+          __,
+          `__.div({class: "my-class", id: "my-id"})
+// <div class="my-class" id="my-id"></div>`,
+        ),
+          __.p(() => {
+            __.text(
+              `The final optional argument of the method is a callback function that can be used to nest other elements inside the div.`,
+            );
+          });
+        code(
+          __,
+          `__.div({id: "parent"}, () => __.div({id: "child"}))
+/*
+<div id="parent">
+  <div id="child"></div>
+</div>
+*/`,
         );
         __.p(() => {
-          __.text(
-            `The final optional argument of the method is a callback function that can be used to nest other elements inside the div.`,
-          );
+          __.text(`You can add a text node to an element either by adding a `);
+          __.code({ text: "text" });
+          __.text(` option to an attributes object, or by calling the `);
+          __.code({ text: "text" });
+          __.text(` method of `);
+          __.code({ text: "__" });
         });
-        __.pre(() => {
-          __.code({
-            text: `__.div({id: "parent"}, () => __.div({id: "child"}))`,
-          });
-        });
+        code(
+          __,
+          `__.div({text: "Hello, World!"})
+// <div>Hello, World!</div>
+// or
+__.div(() => __.text("Hello, World!"))
+// <div>Hello, World!</div>`,
+        );
       },
       codepen: () => {
         codepen(__, {

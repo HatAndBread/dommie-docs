@@ -26,14 +26,24 @@ export default (__: Template) => {
               });
 
               __.li(() => {
-                __.strong({ text: "Defining the Root Component: " });
+                __.strong({ text: "Defining the Root Function: " });
                 __.text(
-                  "The root component is a function that takes a single argument (represented by ",
+                  "The root of the app is a function that takes a single argument (represented by ",
                 );
                 __.code({ text: "__" });
                 __.text(") and returns a ");
                 __.code({ text: "component" });
-                __.text(". Every component in Dommie follows this structure.");
+                __.text(
+                  ". Every building block of your Dommie application follows this structure - a function that takes ",
+                );
+                __.code({ text: "__" });
+                __.text(" as an argument and returns ");
+                __.code({ text: "__.component()" });
+                __.text(". ");
+                __.code({ text: "__" });
+                __.text(
+                  ` is an object that contains methods for generating HTML elements.`,
+                );
               });
 
               __.li(() => {

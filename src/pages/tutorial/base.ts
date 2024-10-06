@@ -14,7 +14,7 @@ export default (__: Template) => {
           __.p(() => {
             __.text(`Dommie allows you to build dynamic and reactive web applications using pure JavaScript templating.
               Whether you simply want to add small "islands" of interactivity to your application or build a full-fledged single-page application, Dommie has you covered.
-              There are no special syntaxes to learn, just plain JavaScript you already know and love (or not!).`);
+              There is no special syntax to learn, just the JavaScript you already know.`);
           });
           __.p(() => {
             __.text(`In this tutorial, you will learn how to create components, handle events, manage state, and more.

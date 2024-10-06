@@ -16,6 +16,7 @@ const tutorialRoutes = {
   "/tutorial/templating": "Templating",
   "/tutorial/reusable-components": "Reusable Components",
   "/tutorial/loops": "Loops",
+  "/tutorial/conditionals": "Conditionals",
   "/tutorial/component-params": "Component Parameters",
   "/tutorial/state": "State Management",
   "/tutorial/multiple-subscriptions": "Multiple Subscriptions",

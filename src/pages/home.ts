@@ -151,14 +151,16 @@ export default (__: Template) => {
             });
             __.p({ class: "mt-4" }, () => {
               __.text(`
-                Dommie is a lightweight library that provides just enough to build dynamic interfaces without the overhead of a full framework.
-                We love traditional server-side frameworks like Rails, Django, and Laravel--and Dommie fits in with them seamlessly.
-                Just sprinkle some Dommie on top when you need to handle complex UI interactions.
+                Traditional server-side frameworks like Rails, Django, and Laravel are great!--and Dommie fits in with them seamlessly.
+                Just sprinkle some Dommie on top when you want to a little reactivity in your JavaScript. No need to structure your app around your frontend.
                 `);
             });
           });
           __.p({ class: "" }, () => {
-            __.strong({ text: "⚡ Single Page Applications (SPAs)" });
+            __.strong({ text: "⚡ Single Page Applications" });
+          });
+          __.p(() => {
+            __.strong({ text: "SPAs" });
             __.text(
               " have their place too, and Dommie has that covered with built-in client-side routing.",
             );
