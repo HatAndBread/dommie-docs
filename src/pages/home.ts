@@ -152,7 +152,7 @@ export default (__: Template) => {
             __.p(() => {
               __.text(`
                 Traditional server-side frameworks like Rails, Django, and Laravel are great!--and Dommie fits in with them seamlessly.
-                Just sprinkle some Dommie on top when you want to a little reactivity in your JavaScript. No need to structure your app around your frontend.
+                Just sprinkle some Dommie on top when you want to add a little reactivity to complex UI interactions. No need to structure your app around your frontend.
                 `);
             });
           });
