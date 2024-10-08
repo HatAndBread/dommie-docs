@@ -24,8 +24,8 @@ export default (__: Template) => {
               code(
                 __,
                 `subscribe(() => {
-                console.log("This will be logged when 'count' changes");
-              }, [count]);`,
+  console.log("This will be logged when 'count' changes");
+}, [count]);`,
               );
             });
           });

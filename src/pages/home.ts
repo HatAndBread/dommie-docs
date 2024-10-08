@@ -133,7 +133,7 @@ export default (__: Template) => {
         () => {
           __.h2({
             class: "text-5xl font-bold mt-8 text-center mb-4",
-            text: "Why Dommie?",
+            text: "Why?",
           });
           __.strong(() => {
             __.text(
@@ -157,7 +157,7 @@ export default (__: Template) => {
             ⚡ Not every app needs a UI framework.
             `,
             });
-            __.p(() => {
+            __.p({ class: "leading-relaxed" }, () => {
               __.br();
               __.text(`
                 Traditional server-side frameworks like Rails, Django, and Laravel are great!--and Dommie fits in with them seamlessly.
@@ -165,7 +165,7 @@ export default (__: Template) => {
                 `);
             });
           });
-          __.p(() => {
+          __.p({ class: "leading-relaxed" }, () => {
             __.strong({ text: "⚡ Single Page Applications" });
             __.p(() => {
               __.br();
@@ -173,6 +173,91 @@ export default (__: Template) => {
               __.text(
                 " have their place too, and Dommie has that covered with built-in client-side routing.",
               );
+            });
+          });
+          __.p({ class: "leading-relaxed" }, () => {
+            __.strong({ text: "⚡ Fast" });
+            __.p(() => {
+              __.br();
+              __.text(
+                `Dommie uses a "subscription" system in which DOM elements subscribe to state changes. This means that only the elements that need to be updated are updated, making it very performant.`,
+              );
+              __.div({ class: "mt-2" }, () => {
+                code(
+                  __,
+                  `const count = state(0);
+__.div({subscribe: count, text: () => count.value});
+__.div({text: "Dommie will ignore me when \`count\` changes!"})`,
+                );
+              });
+            });
+          });
+        },
+      );
+    });
+    __.div({ class: "divider my-16" });
+    __.h2({
+      class: "text-5xl font-bold mt-8 text-center mb-4",
+      text: "What?",
+    });
+    __.div({ class: "flex  justify-center" }, () => {
+      __.div(
+        {
+          class: "flex flex-col justify-center gap-4 max-w-[900px] w-[90%]",
+        },
+        () => {
+          __.p({ class: "max-w-[900px] leading-relaxed" }, () => {
+            __.text(`Dommie is a personal project of `);
+            __.a({
+              href: "https://github.com/HatAndBread",
+              class: "link font-semibold",
+              text: "Joshua Hume",
+            });
+            __.text(
+              `. It was created out of curiosity and a desire to have a simple reactive UI library that can be easily dropped into any project. `,
+            );
+            __.text(
+              `React, Vue, etc. are great and have their place, but I found them to be overkill for many projects.
+          Dommie was created to provide the experience of a reactive UI library without necessarily dictating the architecture of your app.
+          I hope you find it useful!
+          `,
+            );
+            __.br();
+          });
+          __.p({ class: "max-w-[900px] leading-relaxed" }, () => {
+            __.strong({
+              text: "Some other interesting projects that are made in a similar spirit:",
+            });
+            __.ul({ class: "flex flex-col gap-4 mt-4" }, () => {
+              __.li({ class: "flex gap-2" }, () => {
+                __.text("❤️");
+                __.a({
+                  href: "https://vanjs.org/",
+                  text: " VanJS",
+                  class: "link font-semibold",
+                });
+                __.text(`- "A 1.0kB Grab 'n Go Reactive UI Framework"`);
+              });
+              __.li({ class: "flex gap-2" }, () => {
+                __.text("❤️");
+                __.a({
+                  href: "https://alpinejs.dev/",
+                  text: "Alpine.js",
+                  class: "link font-semibold",
+                });
+                __.text(
+                  ` - "Alpine is a rugged, minimal tool for composing behavior directly in your markup. Think of it like jQuery for the modern web."`,
+                );
+              });
+              __.li({ class: "flex gap-2" }, () => {
+                __.text("❤️");
+                __.a({
+                  href: "https://htmx.org/",
+                  text: "HTMX",
+                  class: "link font-semibold",
+                });
+                __.text(` - "high power tools for HTML"`);
+              });
             });
           });
         },
@@ -190,6 +275,7 @@ export default (__: Template) => {
             text: "Examples",
           });
           __.p({
+            class: "leading-relaxed",
             text: "The easiest way to get started is to fork an example app and start breaking things. Feel free to fork and modify any of the examples below.",
           });
           __.ul(() => {

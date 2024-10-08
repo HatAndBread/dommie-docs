@@ -28,7 +28,6 @@ export default (__: Template) => {
                   " function, which initializes a reactive variable. This variable tracks the value and can be updated when necessary.",
                 );
                 __.br();
-                //In our example, the count state is initialized with a value of 0:
                 __.text("In the example, we initialize the ");
                 __.code({ text: "count" });
                 __.text(" state like this: ");
