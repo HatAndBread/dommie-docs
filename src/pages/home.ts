@@ -82,7 +82,7 @@ export default (__: Template) => {
             });
             __.p({
               class: "py-6",
-              text: "Dommie is a modest JavaScript UI library that doesn't care about the rest of your tech stack. Just drop it into any application and start building.",
+              text: "Dommie is a tiny JavaScript UI library that doesn't care about the rest of your tech stack. Just drop it into any application and start building.",
             });
             __.div({ class: "flex gap-4" }, () => {
               __.button(

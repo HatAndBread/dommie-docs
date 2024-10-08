@@ -19,6 +19,7 @@ import refs from "./pages/tutorial/refs";
 import afterMounted from "./pages/tutorial/after-mounted";
 import apiCalls from "./pages/tutorial/api-calls";
 import afterDestroyed from "./pages/tutorial/after-destroyed";
+import typescript from "./pages/tutorial/typescript";
 import notFound from "./pages/not-found";
 import hljs from "highlight.js/lib/core";
 import javascript from "highlight.js/lib/languages/javascript";
@@ -43,6 +44,7 @@ const routes = {
   "/tutorial/after-mounted": afterMounted,
   "/tutorial/api-calls": apiCalls,
   "/tutorial/after-destroyed": afterDestroyed,
+  "/tutorial/typescript": typescript,
 };
 
 const main = (__: Template) => {

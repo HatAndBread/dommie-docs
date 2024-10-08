@@ -34,7 +34,7 @@ export default (__: Template) => {
                 __.text(") and returns a ");
                 __.code({ text: "component" });
                 __.text(
-                  ". Every building block of your Dommie application follows this structure - a function that takes ",
+                  ". Every component of your Dommie application follows this structure - a function that takes ",
                 );
                 __.code({ text: "__" });
                 __.text(" as an argument and returns ");

@@ -2,7 +2,7 @@ import type { Template } from "dommie";
 interface Options {
   title: string;
   content: () => void;
-  codepen: () => void;
+  codepen?: () => void;
 }
 import hljs from "highlight.js/lib/core";
 import javascript from "highlight.js/lib/languages/javascript";
@@ -26,11 +26,13 @@ const tutorialRoutes = {
   "/tutorial/after-mounted": "afterMounted",
   "/tutorial/api-calls": "API Calls",
   "/tutorial/after-destroyed": "afterDestroyed",
+  "/tutorial/typescript": "TypeScript",
 };
 const sectionBreaks = {
   "/tutorial": "Getting Started",
   "/tutorial/component-params": "State Management",
   "/tutorial/refs": "Refs and Life Cycle",
+  "/tutorial/typescript": "Typescript Support",
 };
 export default (__: Template, options: Options) => {
   return __.component(({ r, afterMounted, subscribe }) => {
@@ -143,7 +145,21 @@ export default (__: Template, options: Options) => {
         __.div(
           { class: "h-screen md:h-full bg-base-200 flex md:w-1/2" },
           () => {
-            options.codepen();
+            if (options.codepen) {
+              options.codepen();
+            } else {
+              __.div(
+                { class: "w-full flex justify-center items-center" },
+                () => {
+                  __.img({
+                    src: "/dommie.png",
+                    width: 300,
+                    height: 300,
+                    class: "rounded-lg",
+                  });
+                },
+              );
+            }
           },
         );
       },
