@@ -11,108 +11,109 @@ export default (__: Template) => {
         class: "hero bg-base-100 h-fit min-h-[calc(100vh-64px)] text-secondary",
       },
       () => {
-        __.div({ class: "hero-content flex-col lg:flex-row gap-8" }, () => {
-          __.div(
-            {
-              class:
-                "w-full bg-base-200 rounded-lg overflow-hidden flex items-center justify-center max-w-[90vw]",
-            },
-            () => {
-              // __.span({
-              //   class:
-              //     "loading loading-bars loading-lg absolute text-secondary",
-              // });
-              __.div(
-                {
-                  class: "w-full z-10 relative min-h-[350px]",
-                  subscribe: showCount,
-                },
-                () => {
-                  __.button(
-                    {
-                      text: showCount.value ? "" : "👀 RESULT",
-                      class:
-                        "absolute top-0 right-0 z-10 btn btn-outline btn-primary",
-                      click: () => showCount.update(!showCount.value),
-                    },
-                    () => {
-                      if (!showCount.value) return;
-                      __.img({
-                        src: "/code.svg",
-                        alt: "Code",
-                        width: 20,
-                        height: 20,
+        __.div(
+          { class: "hero-content flex-col-reverse lg:flex-row gap-8" },
+          () => {
+            __.div(
+              {
+                class:
+                  "w-full bg-base-200 rounded-lg overflow-hidden flex items-center justify-center max-w-[90vw]",
+              },
+              () => {
+                __.div(
+                  {
+                    class: "w-full z-10 relative min-h-[350px]",
+                    subscribe: showCount,
+                  },
+                  () => {
+                    __.button(
+                      {
+                        text: showCount.value ? "" : "👀 RESULT",
+                        class:
+                          "absolute top-0 right-0 z-10 btn btn-outline btn-primary",
+                        click: () => showCount.update(!showCount.value),
+                      },
+                      () => {
+                        if (!showCount.value) return;
+                        __.img({
+                          src: "/code.svg",
+                          alt: "Code",
+                          width: 20,
+                          height: 20,
+                        });
+                      },
+                    );
+                    if (!showCount.value) {
+                      code(__, counterCode);
+                      return;
+                    }
+                    __.div({ class: "p-4" }, () => {
+                      __.h1({
+                        style: { fontSize: "2rem", fontWeight: "bold" },
+                        text: () => `Count: ${count.value}`,
+                        subscribe: count,
                       });
-                    },
-                  );
-                  if (!showCount.value) {
-                    code(__, counterCode);
-                    return;
-                  }
-                  __.div({ class: "p-4" }, () => {
-                    __.h1({
-                      style: { fontSize: "2rem", fontWeight: "bold" },
-                      text: () => `Count: ${count.value}`,
-                      subscribe: count,
+                      __.button({
+                        class: "btn btn-primary font-bold text-2xl",
+                        text: "+",
+                        style: { touchAction: "manipulation" },
+                        click: () => count.update(count.value + 1),
+                      });
+                      __.text(" ");
+                      __.button({
+                        class: "btn btn-primary font-bold text-2xl",
+                        text: "-",
+                        style: { touchAction: "manipulation" },
+                        click: () => count.update(count.value - 1),
+                      });
                     });
-                    __.button({
-                      class: "btn btn-primary font-bold text-xl",
-                      text: "+",
-                      click: () => count.update(count.value + 1),
+                    // codepen(__, {
+                    //   hash: "wvVMwBz",
+                    //   title: "Hello Dommie!",
+                    // });
+                  },
+                );
+              },
+            );
+            __.div({ class: "p-2" }, () => {
+              __.h1({
+                class: "text-5xl font-bold",
+                text: "Dommie – An Unambitious JavaScript UI Library 🌈",
+              });
+              __.p({
+                class: "py-6",
+                text: "Dommie is a tiny JavaScript UI library that doesn't care about the rest of your tech stack. Just drop it into any application and start building.",
+              });
+              __.div({ class: "flex gap-4" }, () => {
+                __.button(
+                  {
+                    class: "btn btn-primary",
+                    text: "Tutorial",
+                    click: () => r.go("/tutorial"),
+                  },
+                  () => {
+                    __.img({ src: "/code.svg", alt: "Code", width: 20 });
+                  },
+                );
+                __.a(
+                  {
+                    class: "btn btn-primary",
+                    text: "GitHub",
+                    href: "https://github.com/HatAndBread/Dommie",
+                    target: "_blank",
+                  },
+                  () => {
+                    __.img({
+                      src: "/github-mark.svg",
+                      alt: "Github",
+                      width: 20,
                     });
-                    __.text(" ");
-                    __.button({
-                      class: "btn btn-primary font-bold text-xl",
-                      text: "-",
-                      click: () => count.update(count.value - 1),
-                    });
-                  });
-                  // codepen(__, {
-                  //   hash: "wvVMwBz",
-                  //   title: "Hello Dommie!",
-                  // });
-                },
-              );
-            },
-          );
-          __.div(() => {
-            __.h1({
-              class: "text-5xl font-bold",
-              text: "Dommie – An Unambitious JavaScript UI Library 🌈",
+                  },
+                );
+              });
             });
-            __.p({
-              class: "py-6",
-              text: "Dommie is a tiny JavaScript UI library that doesn't care about the rest of your tech stack. Just drop it into any application and start building.",
-            });
-            __.div({ class: "flex gap-4" }, () => {
-              __.button(
-                {
-                  class: "btn btn-primary",
-                  text: "Tutorial",
-                  click: () => r.go("/tutorial"),
-                },
-                () => {
-                  __.img({ src: "/code.svg", alt: "Code", width: 20 });
-                },
-              );
-              __.a(
-                {
-                  class: "btn btn-primary",
-                  text: "GitHub",
-                  href: "https://github.com/HatAndBread/Dommie",
-                  target: "_blank",
-                },
-                () => {
-                  __.img({
-                    src: "/github-mark.svg",
-                    alt: "Github",
-                    width: 20,
-                  });
-                },
-              );
-            });
-          });
-        });
+          },
+        );
         __.footer(() => {});
       },
     );
