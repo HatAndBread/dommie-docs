@@ -1,6 +1,7 @@
 import type { Template } from "dommie";
 import tutorialTemplate from "../../parts/tutorial-template";
 import codepen from "../../parts/codepen";
+import code from "../../parts/code";
 
 export default (__: Template) => {
   return __.component(() => {
@@ -39,6 +40,15 @@ export default (__: Template) => {
                 __.text(
                   " variable will hold the current value of the counter.",
                 );
+              });
+              __.li(() => {
+                __.strong({ text: "Accessing State Values: " });
+                __.text(
+                  "You can access the value of a state variable using the ",
+                );
+                __.code({ text: "value" });
+                __.text(" property.");
+                code(__, "console.log(count.value); // 0");
               });
               __.li(() => {
                 __.strong({ text: "Updating State: " });
@@ -91,9 +101,9 @@ export default (__: Template) => {
                 });
                 __.text("Each time the button is clicked, the ");
                 __.code({ text: "count" });
-                __.text(" state is updated, and--thanks to the ");
+                __.text(" state is updated, and—thanks to the ");
                 __.code({ text: "subscribe" });
-                __.text("--the UI automatically reflects the new value.");
+                __.text("—the UI automatically reflects the new value.");
               });
               __.li(() => {
                 __.strong({ text: "Challenge: Add a Decrement Button: " });

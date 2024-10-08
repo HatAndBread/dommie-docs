@@ -10,11 +10,13 @@ export default (__: Template) => {
         __.div({ class: "flex flex-col gap-4" }, () => {
           __.p(() => {
             __.text(
-              `Although less common, it is also sometimes necessary to perform some cleanup after a component has been removed from the DOM.`,
+              `Although less common, it is also sometimes necessary to perform some cleanup after a component has been `,
             );
-            __.text(
-              ` In order to do this, "component params" provides you with the `,
-            );
+            __.strong({ text: " removed " });
+            __.text(`from the DOM.`);
+            __.text(` In order to do this, `);
+            __.code({ text: "componentParams" });
+            __.text(` provides you with the `);
             __.code({ text: "afterDestroyed" });
             __.text(" lifecycle hook. ");
           });

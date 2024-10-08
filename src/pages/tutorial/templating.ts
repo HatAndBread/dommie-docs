@@ -24,14 +24,9 @@ export default (__: Template) => {
             });
           });
           __.p(() => {
-            __.text("You will see  ");
-            __.code({ text: "__" });
+            __.text("Don't be confused by the name—it's just a convention. ");
             __.text(
-              " a lot in Dommie code. Don't be confused by its name. The name ",
-            );
-            __.code({ text: "__" });
-            __.text(
-              ` is just a convention. You can call it anything you want. Its role, however, is vital to Dommie.
+              `You can call it anything you want.
               It is an ordinary javascript object that holds methods for generating HTML elements.
               If you call
               `,

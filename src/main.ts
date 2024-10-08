@@ -20,6 +20,10 @@ import afterMounted from "./pages/tutorial/after-mounted";
 import apiCalls from "./pages/tutorial/api-calls";
 import afterDestroyed from "./pages/tutorial/after-destroyed";
 import typescript from "./pages/tutorial/typescript";
+import spas from "./pages/tutorial/spas";
+import navigation from "./pages/tutorial/navigation";
+import wildcardRoutes from "./pages/tutorial/wildcard-routes";
+import done from "./pages/tutorial/done";
 import notFound from "./pages/not-found";
 import hljs from "highlight.js/lib/core";
 import javascript from "highlight.js/lib/languages/javascript";
@@ -45,6 +49,10 @@ const routes = {
   "/tutorial/api-calls": apiCalls,
   "/tutorial/after-destroyed": afterDestroyed,
   "/tutorial/typescript": typescript,
+  "/tutorial/single-page-applications": spas,
+  "/tutorial/navigation": navigation,
+  "/tutorial/wildcard-routes": wildcardRoutes,
+  "/tutorial/done": done,
 };
 
 const main = (__: Template) => {

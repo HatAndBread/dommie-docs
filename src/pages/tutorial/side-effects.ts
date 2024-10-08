@@ -14,7 +14,8 @@ export default (__: Template) => {
           __.p(() => {
             __.text("The ");
             __.code({ text: `subscribe` });
-            __.text(` method of "component params"`);
+            __.text(` method of `);
+            __.code({ text: `componentParams` });
             __.text(
               " allows you to trigger side effects when state changes. Here's how it's used: ",
             );

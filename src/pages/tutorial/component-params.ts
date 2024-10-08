@@ -3,6 +3,7 @@ import tutorialTemplate from "../../parts/tutorial-template";
 import codepen from "../../parts/codepen";
 
 export default (__: Template) => {
+  const cp = (__: Template) => __.code({ text: "componentParams" });
   return __.component(() => {
     tutorialTemplate(__, {
       title: "Component Parameters",
@@ -10,10 +11,18 @@ export default (__: Template) => {
         __.div({ class: "flex flex-col gap-4" }, () => {
           __.p(() => {
             __.text(`
-              Dommie provides each component with an object (which we will refer to from here on out as "component params") that contains all the essential tools to manage the component's internal logic and behavior.
-              Take a look at the result of the example code and take note of the methods "component params" provides you.
-              Of relevance to state management are the
+              Dommie provides each component with an object (which we will refer to from here on out as
               `);
+            cp(__);
+            __.text(
+              ") that contains all the essential tools to manage the component's internal logic and behavior.",
+            );
+            __.text(`
+              Take a look at the result of the example code and take note of the methods
+              `);
+            cp(__);
+            __.text("provides you. ");
+            __.text("Of relevance to state management are the ");
             __.code({ text: "state" });
             __.text(" and ");
             __.code({ text: "subscribe" });

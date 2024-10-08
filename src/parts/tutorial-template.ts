@@ -27,12 +27,18 @@ const tutorialRoutes = {
   "/tutorial/api-calls": "API Calls",
   "/tutorial/after-destroyed": "afterDestroyed",
   "/tutorial/typescript": "TypeScript",
+  "/tutorial/single-page-applications": "Single Page Applications",
+  "/tutorial/navigation": "Navigating Between Pages",
+  "/tutorial/wildcard-routes": "Wildcard Routes",
+  "/tutorial/done": "🎈🎈🎈",
 };
 const sectionBreaks = {
   "/tutorial": "Getting Started",
   "/tutorial/component-params": "State Management",
   "/tutorial/refs": "Refs and Life Cycle",
   "/tutorial/typescript": "Typescript Support",
+  "/tutorial/single-page-applications": "Single Page Applications",
+  "/tutorial/done": "That's It!",
 };
 export default (__: Template, options: Options) => {
   return __.component(({ r, afterMounted, subscribe }) => {

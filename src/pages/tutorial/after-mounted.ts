@@ -11,8 +11,10 @@ export default (__: Template) => {
           __.p(() => {
             __.text(`The `);
             __.code({ text: "afterMounted" });
+            __.text(` lifecycle hook provided by `);
+            __.code({ text: "componentParams" });
             __.text(
-              ` lifecycle hook provided by "component params" takes a callback function that is called after the component is mounted in the DOM.`,
+              ` takes a callback function that is called after the component is mounted in the DOM.`,
             );
           });
           __.p(() => {
@@ -20,8 +22,10 @@ export default (__: Template) => {
               We can use the
               `);
             __.code({ text: "afterMounted" });
+            __.text(` method to access our `);
+            __.code({ text: "ref" });
             __.text(
-              ` method to access our ref from the previous example and focus the input after the component is mounted.`,
+              ` from the previous example and focus the input after the component is mounted.`,
             );
             __.text(` Uncomment the code in the `);
             __.code({ text: "afterMounted" });

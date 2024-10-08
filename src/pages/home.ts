@@ -47,26 +47,34 @@ export default (__: Template) => {
                       code(__, counterCode);
                       return;
                     }
-                    __.div({ class: "p-4" }, () => {
-                      __.h1({
-                        style: { fontSize: "2rem", fontWeight: "bold" },
-                        text: () => `Count: ${count.value}`,
-                        subscribe: count,
-                      });
-                      __.button({
-                        class: "btn btn-primary font-bold text-2xl",
-                        text: "+",
-                        style: { touchAction: "manipulation" },
-                        click: () => count.update(count.value + 1),
-                      });
-                      __.text(" ");
-                      __.button({
-                        class: "btn btn-primary font-bold text-2xl",
-                        text: "-",
-                        style: { touchAction: "manipulation" },
-                        click: () => count.update(count.value - 1),
-                      });
-                    });
+                    __.div(
+                      {
+                        class:
+                          "p-4 flex flex-col items-center justify-center min-h-[350px] bg-accent",
+                      },
+                      () => {
+                        __.h1({
+                          style: { fontSize: "2rem", fontWeight: "bold" },
+                          text: () => `Count: ${count.value}`,
+                          subscribe: count,
+                        });
+                        __.div(() => {
+                          __.button({
+                            class: "btn btn-primary font-bold text-2xl",
+                            text: "+",
+                            style: { touchAction: "manipulation" },
+                            click: () => count.update(count.value + 1),
+                          });
+                          __.text(" ");
+                          __.button({
+                            class: "btn btn-primary font-bold text-2xl",
+                            text: "-",
+                            style: { touchAction: "manipulation" },
+                            click: () => count.update(count.value - 1),
+                          });
+                        });
+                      },
+                    );
                     // codepen(__, {
                     //   hash: "wvVMwBz",
                     //   title: "Hello Dommie!",
@@ -151,15 +159,17 @@ export default (__: Template) => {
             `,
             });
             __.p(() => {
+              __.br();
               __.text(`
                 Traditional server-side frameworks like Rails, Django, and Laravel are great!--and Dommie fits in with them seamlessly.
                 Just sprinkle some Dommie on top when you want to add a little reactivity to complex UI interactions. No need to structure your app around your frontend.
                 `);
             });
           });
-          __.p({ class: "" }, () => {
+          __.p(() => {
             __.strong({ text: "⚡ Single Page Applications" });
             __.p(() => {
+              __.br();
               __.strong({ text: "SPAs" });
               __.text(
                 " have their place too, and Dommie has that covered with built-in client-side routing.",
@@ -182,59 +192,6 @@ export default (__: Template) => {
           });
           __.p({
             text: "The easiest way to get started is to fork an example app and start breaking things. Feel free to fork and modify any of the examples below.",
-          });
-          __.ul(() => {
-            const examples = [
-              {
-                title: "Dommie Docs",
-                copy: "THIS website here!",
-                appUrl: "https://dommie-docs.vercel.app/",
-                codeUrl: "https://github.com/HatAndBread/dommie-docs",
-              },
-              {
-                title: "Breweries Of The World",
-                copy: "An example SPA built with the Open Brewery DB API.",
-                appUrl: "https://breweries-of-the-world.vercel.app/",
-                codeUrl:
-                  "https://github.com/HatAndBread/breweries-of-the-world",
-              },
-              {
-                title: "Dommie Weather Example",
-                copy: "A simple weather app made with Open Meteo API.",
-                appUrl: "https://dommie-weather-example.vercel.app/",
-                codeUrl:
-                  "https://github.com/HatAndBread/dommie-weather-example",
-              },
-            ];
-            for (const example of examples) {
-              __.li({ class: "flex ites-center gap-4 mb-4" }, () => {
-                __.strong({ text: "🚀" });
-                __.a({
-                  class: "link font-semibold",
-                  text: example.title,
-                  href: example.appUrl,
-                  target: "_blank",
-                });
-                __.span({
-                  text: example.copy,
-                });
-                __.a(
-                  {
-                    href: example.codeUrl,
-                    target: "_blank",
-                  },
-                  () => {
-                    __.img({
-                      src: "/github-mark.svg",
-                      style: { maxWidth: "20px" },
-                      height: 20,
-                      width: 20,
-                      alt: "code",
-                    });
-                  },
-                );
-              });
-            }
           });
         },
       );
