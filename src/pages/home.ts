@@ -1,5 +1,4 @@
 import type { Template } from "dommie";
-import codepen from "../parts/codepen";
 import code from "../parts/code";
 
 export default (__: Template) => {
@@ -192,6 +191,59 @@ export default (__: Template) => {
           });
           __.p({
             text: "The easiest way to get started is to fork an example app and start breaking things. Feel free to fork and modify any of the examples below.",
+          });
+          __.ul(() => {
+            const examples = [
+              {
+                title: "Dommie Docs",
+                copy: "THIS website here!",
+                appUrl: "https://dommie-docs.vercel.app/",
+                codeUrl: "https://github.com/HatAndBread/dommie-docs",
+              },
+              {
+                title: "Breweries Of The World",
+                copy: "An example SPA built with the Open Brewery DB API.",
+                appUrl: "https://breweries-of-the-world.vercel.app/",
+                codeUrl:
+                  "https://github.com/HatAndBread/breweries-of-the-world",
+              },
+              {
+                title: "Dommie Weather Example",
+                copy: "A simple weather app made with Open Meteo API.",
+                appUrl: "https://dommie-weather-example.vercel.app/",
+                codeUrl:
+                  "https://github.com/HatAndBread/dommie-weather-example",
+              },
+            ];
+            for (const example of examples) {
+              __.li({ class: "flex ites-center gap-4 mb-4" }, () => {
+                __.strong({ text: "🚀" });
+                __.a({
+                  class: "link font-semibold",
+                  text: example.title,
+                  href: example.appUrl,
+                  target: "_blank",
+                });
+                __.span({
+                  text: example.copy,
+                });
+                __.a(
+                  {
+                    href: example.codeUrl,
+                    target: "_blank",
+                  },
+                  () => {
+                    __.img({
+                      src: "/github-mark.svg",
+                      style: { maxWidth: "20px" },
+                      height: 20,
+                      width: 20,
+                      alt: "code",
+                    });
+                  },
+                );
+              });
+            }
           });
         },
       );

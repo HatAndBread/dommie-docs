@@ -4,11 +4,6 @@ interface Options {
   content: () => void;
   codepen?: () => void;
 }
-import hljs from "highlight.js/lib/core";
-import javascript from "highlight.js/lib/languages/javascript";
-
-// Then register the languages you need
-hljs.registerLanguage("javascript", javascript);
 
 const tutorialRoutes = {
   "/tutorial": "Welcome To Dommie!",
@@ -41,10 +36,7 @@ const sectionBreaks = {
   "/tutorial/done": "That's It!",
 };
 export default (__: Template, options: Options) => {
-  return __.component(({ r, afterMounted, subscribe }) => {
-    afterMounted(() => {
-      hljs.highlightAll();
-    });
+  return __.component(({ r, subscribe }) => {
     subscribe(() => {
       window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     }, [r.path]);

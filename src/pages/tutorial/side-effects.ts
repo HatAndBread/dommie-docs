@@ -1,6 +1,7 @@
 import type { Template } from "dommie";
 import tutorialTemplate from "../../parts/tutorial-template";
 import codepen from "../../parts/codepen";
+import code from "../../parts/code";
 
 export default (__: Template) => {
   return __.component(() => {
@@ -19,12 +20,13 @@ export default (__: Template) => {
             __.text(
               " allows you to trigger side effects when state changes. Here's how it's used: ",
             );
-            __.pre({ class: "mt-4" }, () => {
-              __.code({
-                text: `subscribe(() => {
-  console.log("This will be logged when 'count' changes");
-}, [count]);`,
-              });
+            __.div({ class: "mt-4" }, () => {
+              code(
+                __,
+                `subscribe(() => {
+                console.log("This will be logged when 'count' changes");
+              }, [count]);`,
+              );
             });
           });
           __.strong({ text: "What's Happening:" });

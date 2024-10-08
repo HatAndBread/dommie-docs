@@ -2,16 +2,19 @@ import type { Template } from "dommie";
 import hljs from "highlight.js/lib/core";
 import javascript from "highlight.js/lib/languages/javascript";
 
-// Then register the languages you need
 hljs.registerLanguage("javascript", javascript);
 
 export default (__: Template, text: string) => {
-  __.component(({ afterMounted }) => {
+  __.component(({ afterMounted, ref }) => {
+    const r = ref();
     afterMounted(() => {
-      hljs.highlightAll();
+      const el = r();
+      if (!el) return;
+
+      hljs.highlightElement(el);
     });
     __.pre(() => {
-      __.code(() => {
+      __.code({ ref: r }, () => {
         __.text(text);
       });
     });

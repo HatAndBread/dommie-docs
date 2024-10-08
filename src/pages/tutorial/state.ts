@@ -32,8 +32,8 @@ export default (__: Template) => {
                 __.text("In the example, we initialize the ");
                 __.code({ text: "count" });
                 __.text(" state like this: ");
-                __.pre({ class: "my-2" }, () => {
-                  __.code({ text: "const count = state(0);" });
+                __.div({ class: "my-2" }, () => {
+                  code(__, "const count = state(0);");
                 });
                 __.text("The ");
                 __.code({ text: "count" });
@@ -48,7 +48,9 @@ export default (__: Template) => {
                 );
                 __.code({ text: "value" });
                 __.text(" property.");
-                code(__, "console.log(count.value); // 0");
+                __.div({ class: "my-2" }, () => {
+                  code(__, "console.log(count.value); // 0");
+                });
               });
               __.li(() => {
                 __.strong({ text: "Updating State: " });
@@ -57,10 +59,11 @@ export default (__: Template) => {
                 __.text(
                   " method. This method is crucial because it not only changes the state’s value but also notifies any subscribed UI elements that a change has occurred.",
                 );
-                __.pre({ class: "my-2" }, () =>
-                  __.code({
-                    text: "const increment = () => count.update(count.value + 1);",
-                  }),
+                __.div({ class: "my-2" }, () =>
+                  code(
+                    __,
+                    "const increment = () => count.update(count.value + 1);",
+                  ),
                 );
               });
               __.li(() => {
@@ -74,11 +77,11 @@ export default (__: Template) => {
                 __.text(" state to a ");
                 __.code({ text: "div" });
                 __.text(" element:");
-                __.pre({ class: "my-2" }, () => {
-                  __.code({
-                    text: `__.div({text: () => \`Count: \${count.value}\`, subscribe: count}, () => {\n  __.div({text: count.value});
-})`,
-                  });
+                __.div({ class: "my-2" }, () => {
+                  code(
+                    __,
+                    `__.div({text: () => \`Count: \${count.value}\`, subscribe: count}, () => {\n  __.div({text: count.value}); })`,
+                  );
                 });
                 __.code({ text: "subscribe" });
                 __.strong({
@@ -94,10 +97,8 @@ export default (__: Template) => {
                 __.text(" button that allows users to update the ");
                 __.code({ text: "count" });
                 __.text(" state when clicked:");
-                __.pre({ class: "my-2" }, () => {
-                  __.code({
-                    text: `__.button({text: "Increment", click: increment});`,
-                  });
+                __.div({ class: "my-2" }, () => {
+                  code(__, `__.button({text: "Increment", click: increment});`);
                 });
                 __.text("Each time the button is clicked, the ");
                 __.code({ text: "count" });
