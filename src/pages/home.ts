@@ -235,6 +235,7 @@ __.div({text: "Dommie will ignore me when \`count\` changes!"})`,
                   href: "https://vanjs.org/",
                   text: " VanJS",
                   class: "link font-semibold",
+                  target: "_blank",
                 });
                 __.text(`- "A 1.0kB Grab 'n Go Reactive UI Framework"`);
               });
@@ -244,6 +245,7 @@ __.div({text: "Dommie will ignore me when \`count\` changes!"})`,
                   href: "https://alpinejs.dev/",
                   text: "Alpine.js",
                   class: "link font-semibold",
+                  target: "_blank",
                 });
                 __.text(
                   ` - "Alpine is a rugged, minimal tool for composing behavior directly in your markup. Think of it like jQuery for the modern web."`,
@@ -255,6 +257,7 @@ __.div({text: "Dommie will ignore me when \`count\` changes!"})`,
                   href: "https://htmx.org/",
                   text: "HTMX",
                   class: "link font-semibold",
+                  target: "_blank",
                 });
                 __.text(` - "high power tools for HTML"`);
               });
