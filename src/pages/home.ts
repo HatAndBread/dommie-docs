@@ -83,10 +83,20 @@ export default (__: Template) => {
               },
             );
             __.div({ class: "p-2" }, () => {
-              __.h1({
-                class: "text-5xl font-bold",
-                text: "Dommie – An Unambitious JavaScript UI Library 🌈",
-              });
+              __.h1(
+                {
+                  class: "text-5xl font-bold",
+                  text: "Dommie – An Unambitious JavaScript UI Library ",
+                },
+                () => {
+                  __.img({
+                    src: "/dommie.png",
+                    alt: "Dummy the Dommie Logo",
+                    width: 40,
+                    height: 40,
+                  });
+                },
+              );
               __.p({
                 class: "py-6",
                 text: "Dommie is a tiny JavaScript UI library that doesn't care about the rest of your tech stack. Just drop it into any application and start building.",
@@ -370,22 +380,22 @@ const template = (__) => {
       __.text("Hello, world!");
     });
   });
-}
+};
 app(template, "#app");
 `;
 
-const counterCode = `const count = state(0)
+const counterCode = `const count = state(0);
 __.h1({
   style: { fontSize: "2rem", fontWeight: "bold" },
   text: () => \`Count: \${count.value}\`,
   subscribe: count,
-})
+});
 __.button({
   text: "+",
   click: () => count.update(count.value + 1),
-})
+});
 __.button({
   text: "-",
   click: () => count.update(count.value - 1),
-})
+});
 `;
