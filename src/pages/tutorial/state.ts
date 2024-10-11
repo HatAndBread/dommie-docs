@@ -53,16 +53,11 @@ export default (__: Template) => {
               });
               __.li(() => {
                 __.strong({ text: "Updating State: " });
-                __.text("To update the state, you use the  ");
-                __.code({ text: ".update()" });
-                __.text(
-                  " method. This method is crucial because it not only changes the state’s value but also notifies any subscribed UI elements that a change has occurred.",
-                );
+                __.text("To update the state, simply change the ");
+                __.code("value");
+                __.text(" property of the state variable.");
                 __.div({ class: "my-2" }, () =>
-                  code(
-                    __,
-                    "const increment = () => count.update(count.value + 1);",
-                  ),
+                  code(__, "const increment = () => count.value += 1;"),
                 );
               });
               __.li(() => {

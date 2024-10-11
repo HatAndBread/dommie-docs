@@ -49,7 +49,9 @@ import type { Template, State } from "dommie";
 const template = (__: Template) => {
   return __.component(({state}) => {
     const count = <State<number | null>>state(null);
-    const increment = () => count.update(count.value + 1);
+    const increment = () => {
+      if (count.value !== null) count.value++;
+    };
     __.div({text: () => count.value, subscribe: count});
     __.button({text: "Increment", click: increment });
   });

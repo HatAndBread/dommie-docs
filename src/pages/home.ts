@@ -62,22 +62,18 @@ export default (__: Template) => {
                             class: "btn btn-primary font-bold text-2xl",
                             text: "+",
                             style: { touchAction: "manipulation" },
-                            click: () => count.update(count.value + 1),
+                            click: () => count.value++,
                           });
                           __.text(" ");
                           __.button({
                             class: "btn btn-primary font-bold text-2xl",
                             text: "-",
                             style: { touchAction: "manipulation" },
-                            click: () => count.update(count.value - 1),
+                            click: () => count.value--,
                           });
                         });
                       },
                     );
-                    // codepen(__, {
-                    //   hash: "wvVMwBz",
-                    //   title: "Hello Dommie!",
-                    // });
                   },
                 );
               },
@@ -392,10 +388,10 @@ __.h1({
 });
 __.button({
   text: "+",
-  click: () => count.update(count.value + 1),
+  click: () => count.value++,
 });
 __.button({
   text: "-",
-  click: () => count.update(count.value - 1),
+  click: () => count.value--,
 });
 `;
