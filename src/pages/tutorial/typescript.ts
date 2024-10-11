@@ -1,4 +1,4 @@
-import type { Template, State } from "dommie";
+import type { Template } from "dommie";
 import tutorialTemplate from "../../parts/tutorial-template";
 import code from "../../parts/code";
 

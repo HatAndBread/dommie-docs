@@ -9,6 +9,7 @@ import createAnApplication from "./pages/tutorial/create-an-application";
 import templating from "./pages/tutorial/templating";
 import loops from "./pages/tutorial/loops";
 import conditionals from "./pages/tutorial/conditionals";
+import customComponents from "./pages/tutorial/custom-components";
 import reuseableComponents from "./pages/tutorial/reuseable-components";
 import componentParams from "./pages/tutorial/component-params";
 import state from "./pages/tutorial/state";
@@ -34,6 +35,7 @@ const routes = {
   "/tutorial/reusable-components": reuseableComponents,
   "/tutorial/loops": loops,
   "/tutorial/conditionals": conditionals,
+  "/tutorial/custom-components": customComponents,
   "/tutorial/component-params": componentParams,
   "/tutorial/state": state,
   "/tutorial/multiple-subscriptions": multipleSubscriptions,
